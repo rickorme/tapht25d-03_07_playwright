@@ -1,0 +1,7 @@
+# Smoke test of "Agile Helper"
+import re
+from playwright.sync_api import Page, expect
+
+def test_has_title(page: Page):
+    page.goto("https://lejonmanen.github.io/agile-helper/", timeout=2000)
+    expect(page).to_have_title(re.compile("Agile helper"))
